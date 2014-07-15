@@ -1,0 +1,39 @@
+{
+    "name": "piotrantosik/payu-bundle",
+    "type": "symfony-bundle",
+    "description": "PayU Bundle",
+    "keywords": ["payu", "payment"],
+    "homepage": "http://github.com/piotrantosik/AntQaPayUBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Piotr Antosik",
+            "email": "mail@piotrantosik.com",
+            "homepage": "http://piotrantosik.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "symfony/framework-bundle": "~2.3",
+        "symfony/twig-bundle": "~2.3",
+        "symfony/options-resolver": "~2.3",
+        "symfony/property-access": "~2.3",
+        "doctrine/doctrine-bundle": "*",
+        "doctrine/orm": "~2.2,>=2.2.3",
+        "openpayu/openpayu": "dev-master",
+        "friendsofsymfony/user-bundle": "*"
+    },
+    "require-dev": {
+        "symfony/yaml": "~2.3"
+    },
+    "autoload": {
+        "psr-0": { "AntQa\\Bundle\\PayUBundle": "" }
+    },
+    "target-dir": "AntQa/Bundle/PayUBundle",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        }
+    }
+}

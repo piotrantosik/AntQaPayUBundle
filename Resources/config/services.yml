@@ -1,0 +1,4 @@
+services:
+    ant_qa.payu_bundle.controller.payment:
+        class:     AntQa\Bundle\PayUBundle\Controller\PaymentController
+        arguments: ["@doctrine.orm.entity_manager", "%payu_bundle.pos_env%", "%payu_bundle.pos_id%", "%payu_bundle.pos_signature_key%", "%payu_bundle.payment_class%"]

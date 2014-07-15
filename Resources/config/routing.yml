@@ -1,0 +1,9 @@
+ant_qa_payu_thanks:
+    path:     /thanks
+    defaults:
+        _controller: AntQaPayUBundle:Status:thanks
+        template: @AntQaPayU/Thanks/thanks.html.twig
+
+ant_qa_payu_notify:
+    path:     /notify
+    defaults: { _controller: AntQaPayUBundle:Status:notify }
