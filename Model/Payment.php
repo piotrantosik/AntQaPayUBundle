@@ -13,7 +13,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  *
  * @author Piotr Antosik <mail@piotrantosik.com>
  */
-class Payment
+abstract class Payment
 {
     const STATUS_NEW = 'NEW';
     const STATUS_PENDING = 'PENDING';
