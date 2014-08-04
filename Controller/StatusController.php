@@ -58,7 +58,7 @@ class StatusController extends Controller
                     if (
                         $payment->getStatus() !== Payment::STATUS_COMPLETED
                         &&
-                        $payment->getStatus() !== Payment::STATUS_CANCELLED
+                        $payment->getStatus() !== Payment::STATUS_CANCELED
                     ) {
                         //update payment status
                         $payment->setStatus($result->order->status);
@@ -69,10 +69,10 @@ class StatusController extends Controller
                         $dispatcher->dispatch(AntQaPaymentEvents::PAYMENT_STATUS_UPDATE, $event);
                     }
 
-                    if ($result->order->status === Payment::STATUS_CANCELLED) {
-                        //payment cancelled - eg. notify user?
+                    if ($result->order->status === Payment::STATUS_CANCELED) {
+                        //payment canceled - eg. notify user?
                         $event = new PaymentEvent($payment);
-                        $dispatcher->dispatch(AntQaPaymentEvents::PAYMENT_CANCELLED, $event);
+                        $dispatcher->dispatch(AntQaPaymentEvents::PAYMENT_CANCELED, $event);
                     }
 
                     if ($result->order->status === Payment::STATUS_COMPLETED) {
