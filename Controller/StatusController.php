@@ -67,18 +67,18 @@ class StatusController extends Controller
 
                         $event = new PaymentEvent($payment);
                         $dispatcher->dispatch(AntQaPaymentEvents::PAYMENT_STATUS_UPDATE, $event);
-                    }
 
-                    if ($result->order->status === Payment::STATUS_CANCELED) {
-                        //payment canceled - eg. notify user?
-                        $event = new PaymentEvent($payment);
-                        $dispatcher->dispatch(AntQaPaymentEvents::PAYMENT_CANCELED, $event);
-                    }
+                        if ($result->order->status === Payment::STATUS_CANCELED) {
+                            //payment canceled - eg. notify user?
+                            $event = new PaymentEvent($payment);
+                            $dispatcher->dispatch(AntQaPaymentEvents::PAYMENT_CANCELED, $event);
+                        }
 
-                    if ($result->order->status === Payment::STATUS_COMPLETED) {
-                        //process payment action - eg. add user point?
-                        $event = new PaymentEvent($payment);
-                        $dispatcher->dispatch(AntQaPaymentEvents::PAYMENT_COMPLETED, $event);
+                        if ($result->order->status === Payment::STATUS_COMPLETED) {
+                            //process payment action - eg. add user point?
+                            $event = new PaymentEvent($payment);
+                            $dispatcher->dispatch(AntQaPaymentEvents::PAYMENT_COMPLETED, $event);
+                        }
                     }
                 }
 
