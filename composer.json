@@ -21,7 +21,7 @@
         "symfony/property-access": "~2.3",
         "doctrine/doctrine-bundle": "*",
         "doctrine/orm": "~2.2,>=2.2.3",
-        "openpayu/openpayu": "dev-master",
+        "openpayu/openpayu": ">=2.0.0@dev,<2.1.0",
         "friendsofsymfony/user-bundle": "*"
     },
     "require-dev": {
