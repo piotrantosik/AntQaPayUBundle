@@ -8,9 +8,9 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\Loader;
 
 /**
- * This is the class that loads and manages your bundle configuration
+ * Class AntQaPayUBundleExtension
  *
- * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
+ * @author Piotr Antosik <mail@piotrantosik.com>
  */
 class AntQaPayUBundleExtension extends Extension
 {

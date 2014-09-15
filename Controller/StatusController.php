@@ -39,7 +39,6 @@ class StatusController extends Controller
     public function notifyAction()
     {
         $paymentController = $this->get('ant_qa.payu_bundle.controller.payment');
-        $em = $this->getDoctrine()->getManager();
         /** @var $dispatcher \Symfony\Component\EventDispatcher\EventDispatcherInterface */
         $dispatcher = $this->container->get('event_dispatcher');
 
@@ -52,7 +51,7 @@ class StatusController extends Controller
             if ($result->order->orderId) {
                 $order = \OpenPayU_Order::retrieve($result->order->orderId);
                 /** @var Payment $payment */
-                $payment = $em->getRepository($this->container->getParameter('payu_bundle.payment_class'))->find($result->order->orderId);
+                $payment = $this->getDoctrine()->getManager()->getRepository($this->container->getParameter('payu_bundle.payment_class'))->find($result->order->orderId);
 
                 if ($payment) {
                     if (
@@ -62,8 +61,7 @@ class StatusController extends Controller
                     ) {
                         //update payment status
                         $payment->setStatus($result->order->status);
-
-                        $em->flush();
+                        $this->getDoctrine()->getManager()->flush();
 
                         $event = new PaymentEvent($payment);
                         $dispatcher->dispatch(AntQaPaymentEvents::PAYMENT_STATUS_UPDATE, $event);

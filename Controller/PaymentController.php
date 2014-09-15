@@ -7,7 +7,6 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Symfony\Component\PropertyAccess\PropertyAccess;
-use Symfony\Component\Security\Core\User\UserInterface;
 
 use AntQa\Bundle\PayUBundle\Model\Payment;
 
@@ -84,7 +83,7 @@ class PaymentController
     }
 
     /**
-     * @param $url
+     * @param string $url
      *
      * @return RedirectResponse
      */

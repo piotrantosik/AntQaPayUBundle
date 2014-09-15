@@ -2,7 +2,7 @@
     "name": "piotrantosik/payu-bundle",
     "type": "symfony-bundle",
     "description": "PayU Bundle",
-    "keywords": ["payu", "payment"],
+    "keywords": ["payu", "payment", "money"],
     "homepage": "http://github.com/piotrantosik/AntQaPayUBundle",
     "license": "MIT",
     "authors": [
