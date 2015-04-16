@@ -3,7 +3,6 @@
 namespace AntQa\Bundle\PayUBundle\Model;
 
 use Doctrine\ORM\Mapping as ORM;
-use FOS\UserBundle\Model\User;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
@@ -52,7 +51,7 @@ abstract class Payment
     protected $createdAt;
 
     /**
-     * @var User|null
+     * @var UserInterface|null
      */
     protected $user;
 
