@@ -2,7 +2,6 @@
 
 namespace AntQa\Bundle\PayUBundle\Tests\Controller;
 
-
 class PaymentControllerTest extends \PHPUnit_Framework_TestCase
 {
     public function testInstance()
