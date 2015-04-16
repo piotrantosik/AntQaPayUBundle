@@ -98,7 +98,7 @@ class PaymentController
     protected function configureOrder(OptionsResolverInterface $resolver)
     {
         $resolver->setRequired([
-            'completeUrl',
+            'continueUrl',
             'notifyUrl',
             'customerIp',
             'merchantPosId',
@@ -116,7 +116,7 @@ class PaymentController
         ]);
 
         $resolver->setAllowedValues([
-            'completeUrl' => 'string',
+            'continueUrl' => 'string',
             'notifyUrl' => 'string',
             'customerIp' => 'string',
             'merchantPosId' => 'int',
