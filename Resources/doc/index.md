@@ -84,7 +84,7 @@ payu_bundle:
 
     payu_id: 145227
     payu_signature: 13a980d4f851f3d9a1cfc792fb1f5e50
-    pos_env: secure
+    payu_env: secure
 ```
 
 ### Create order
@@ -99,13 +99,13 @@ $order['currencyCode'] = 'PLN';
 $order['totalAmount'] = 1000;
 $order['extOrderId'] = mt_rand(1000, 2000); //must be unique!
 
-$order['products']['products'][0] = [
+$order['products'][0] = [
     'name' => 'Test product',
     'unitPrice' => 1000,
     'quantity' => 1
 ];
 
-$order['products']['products'][1] = [
+$order['products'][1] = [
     'name' => 'Test product #2',
     'unitPrice' => 1000,
     'quantity' => 1
