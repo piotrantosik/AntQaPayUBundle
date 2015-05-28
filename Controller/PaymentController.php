@@ -122,7 +122,7 @@ class PaymentController
                 'description' => 'string',
                 'currencyCode' => 'string',
                 'totalAmount' => 'integer',
-                'extOrderId' => 'string',
+                'extOrderId' => 'integer',
                 'products' => 'array',
                 'buyer' => 'array'
             ]);
