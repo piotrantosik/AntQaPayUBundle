@@ -97,35 +97,34 @@ class PaymentController
      */
     protected function configureOrder(OptionsResolverInterface $resolver)
     {
-        $resolver->setRequired([
-            'continueUrl',
-            'notifyUrl',
-            'customerIp',
-            'merchantPosId',
-            'description',
-            'currencyCode',
-            'totalAmount',
-            'extOrderId',
-            'products',
-            'buyer'
-        ]);
-
-        $resolver->setDefaults([
-            'currencyCode' => 'PLN',
-            'merchantPosId' => \OpenPayU_Configuration::getMerchantPosId() //todo - as config parameter
-        ]);
-
-        $resolver->setAllowedValues([
-            'continueUrl' => 'string',
-            'notifyUrl' => 'string',
-            'customerIp' => 'string',
-            'merchantPosId' => 'int',
-            'description' => 'string',
-            'currencyCode' => 'string',
-            'totalAmount' => 'int',
-            'extOrderId' => 'string',
-            'products' => 'array',
-            'buyer' => 'array'
-        ]);
+        $resolver
+            ->setRequired([
+                'continueUrl',
+                'notifyUrl',
+                'customerIp',
+                'merchantPosId',
+                'description',
+                'currencyCode',
+                'totalAmount',
+                'extOrderId',
+                'products',
+                'buyer'
+            ])
+            ->setDefaults([
+                'currencyCode' => 'PLN',
+                'merchantPosId' => \OpenPayU_Configuration::getMerchantPosId() //todo - as config parameter
+            ])
+            ->setAllowedTypes([
+                'continueUrl' => 'string',
+                'notifyUrl' => 'string',
+                'customerIp' => 'string',
+                'merchantPosId' => 'int',
+                'description' => 'string',
+                'currencyCode' => 'string',
+                'totalAmount' => 'integer',
+                'extOrderId' => 'string',
+                'products' => 'array',
+                'buyer' => 'array'
+            ]);
     }
 }
