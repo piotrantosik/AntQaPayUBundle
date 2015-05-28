@@ -112,7 +112,7 @@ class PaymentController
             ])
             ->setDefaults([
                 'currencyCode' => 'PLN',
-                'merchantPosId' => \OpenPayU_Configuration::getMerchantPosId() //todo - as config parameter
+                'merchantPosId' => (int) \OpenPayU_Configuration::getMerchantPosId() //todo - as config parameter
             ])
             ->setAllowedTypes([
                 'continueUrl' => 'string',
